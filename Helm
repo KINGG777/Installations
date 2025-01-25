@@ -1,0 +1,15 @@
+# Update the system and install dependencies
+sudo yum update -y
+sudo yum install curl tar -y
+
+# Download the latest version of Helm (replace the version if needed)
+curl https://get.helm.sh/helm-v3.11.2-linux-amd64.tar.gz -o helm-v3.11.2-linux-amd64.tar.gz
+
+# Extract the Helm archive
+tar -zxvf helm-v3.11.2-linux-amd64.tar.gz
+
+# Move the Helm binary to /usr/local/bin
+sudo mv linux-amd64/helm /usr/local/bin/helm
+
+# Verify Helm installation
+helm version
